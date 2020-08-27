@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
+
+	</head>
+	<body>
+		<header class="safe">
+			<a href="" class="l iconfont icon-meizu logo"></a>
+			<span><i>购物车 &gt; </i>确认订单 &gt; 在线支付 &gt; 完成</span>
+			<a href="first.html" class="r header-a header-user">我的商城</a>
+			<a href="" class="r header-a header-me">我的订单</a>
+		</header>
+		
+		<section>
+			<div class="car-header safe">
+				<!-- <input type="checkbox" name="" id="" value="" class="all-select" />
+				<span>全选</span> -->
+				<i>单价（元）</i>
+				<i>数量</i>
+				<i>小计（元）</i>
+			</div>
+			<ul class="car-section safe">
+				
+			</ul>
+			<div class="safe car-footer">
+				<input type="button" name="" id="" value="-" class="all-select delete-all" />
+				<span>删除</span>
+				<span>所有的商品</span>
+				<span>共</span>
+				<i class="numAll">0</i>
+				<span>件</span>
+				<span>已优惠</span>
+				<i class="red">0.00</i>
+				<span>,合计（不含运费）：</span>
+				<u>￥</u>
+				<i id="priceAll">0.00</i>
+				<a href="">去结算</a>
+			</div>
+			
+			<div class="safe no-load">
+				<h1>您还没有登录！</h1>
+				<h2>登录后可显示您账号中已加入的商品哦~</h2>
+				<a href="load.html">去登录</a>
+				<img src="img/details/panda.png" >
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+	</body>
+</html>
+<script src="./js/jqy.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$("footer").load("footer.html");
+</script>
+<script type="text/javascript">
+	if(localStorage["phone"] == undefined && sessionStorage["phone"] == undefined){
+		$(".header-user").css("display","none");
+		$(".header-me").css("display","none");
+		$(".car-header").css("display","none");
+		$(".car-footer").css("display","none");
+		$(".no-load").css("display","block");
+	}else{$.ajax({
+		url:"shopcar.php",
+		type:"get",
+		data:"",
+		success:function(resText){
+			let arr = JSON.parse(resText);
+			console.log(arr[0]["goodsname"]);
+			for(let i=0;i<arr.length;i++){
+				let oLi =`
+				<li class="car-li">
+					<input type="button" name="" id="" value="-" class="all-select delete" />
+					<img src=${arr[i]["goodsimg"]} alt="" class="car-img trend-img" >
+					<div class="car-goods">
+						<h1 class="trend-name">${arr[i]["goodsname"]}</h1>
+						<i class="trend-color">${arr[i]["goodscolor"]}</i>
+						<b class="trend-ram">${arr[i]["goodsram"]}</b>
+					</div>
+					<div class="car-price">
+						<i>￥</i><span class="price trend-price">${arr[i]["goodsprice"]}</span>
+					</div>
+					
+					<div class="car-num">
+						<button class="car-num-less">-</button>
+						<span class="num">1</span>
+						<button class="car-num-more">+</button>
+					</div>
+					<div class="car-small-price">
+						<i>￥</i><span class="samllPrice">4600</span>
+					</div>
+				</li>`;
+				let oUl = document.querySelector(".car-section");
+				oUl.innerHTML += oLi;
+			}
+			//减少数量
+			$(".car-num-less").click(function(){
+				if($(this).next().html()!=0){
+				let num = $(this).next().html();
+				num--;
+				$(this).next().html(num);
+				smallprice();
+				priceall();
+				numall()
+				}
+			})
+			//增加数量
+			$(".car-num-more").click(function(){
+				let num = $(this).prev().html();
+				num++;
+				$(this).prev().html(num);
+				smallprice();
+				priceall();
+				numall();
+
+			})
+			//计算总价
+			function priceall(){
+				let PriceAll = 0;
+				for(let i=0;i<$(".samllPrice").length;i++){
+					PriceAll +=  Number($(".samllPrice").eq(i).html()); 
+				}
+				$("#priceAll").html(PriceAll);
+			}
+			//计算小计
+			function smallprice(){
+				for(let i=0;i<$(".samllPrice").length;i++){
+					//获取数量
+					let num = $(".samllPrice").eq(i).parent().prev().find("span").html();
+					//获取单价
+					let price = $(".samllPrice").eq(i).parent().prev().prev().find("span").html();
+					let mulp = num * price;
+					$(".samllPrice").eq(i).html(mulp);
+				}
+			}
+			//计算总数
+			function numall(){
+				let num = 0;
+				console.log(1);
+				for(let i=0;i<$(".num").length;i++){
+					console.log($(".num").eq(i).html());
+					num += Number($(".num").eq(i).html()) ;
+					$(".numAll").html(num);
+				}
+			}
+			$(".delete").click(function(){
+				let photo = $(this).next().attr("src");
+				$.ajax({
+					url:"deletecar.php",
+					type:"post",
+					data:"goodsimg="+photo,
+					success:function(resText){
+						alert("删除成功");
+						window.location.reload();
+					}
+				})
+			})
+			$(".delete-all").click(function(){
+				$.ajax({
+					url:"deleteAll.php",
+					type:"post",
+					data:"",
+					success:function(resText){
+						alert("成功清空购物车");
+						window.location.reload();
+					}
+				})
+			})
+			numall();
+			smallprice();
+			priceall();
+		}
+	})}
+</script>

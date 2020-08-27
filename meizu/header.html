@@ -5,97 +5,7 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
-		<style type="text/css">
-			.headers{
-				height: 80px;
-				
-			}
-			header{
-				border-bottom: 1px solid #efefef;
-			}
-			.logo{
-				font-size: 23px;
-				color: #008cff;
-				/* font-weight: bolder; */
-				line-height: 80px;
-				letter-spacing: 4px;
-				float: left;
-				margin-right: 145px;
-			}
-			.nav{
-				font-size: 14px;
-				line-height: 80px;
-				margin-left: 145px;
-				position: relative;
-			}
-			.nav-a{
-				margin-right: 30px;
-				color: #333;
-				height: 80px;
-				display: block;
-				float: left;
-			}
-			.nav-a:hover{
-				color: #008cff;
-			}
-			.nav-margin{
-				margin-left: 17px;
-			}
-			.nav-search{
-				width: 170px;
-				height: 30px;
-				border-radius: 15px;
-				/* border: none; */
-				outline: none;
-				font-size: 12px;
-				text-indent: 8px;
-				position: relative;
-				top: -5px;
-				margin-left: 40px;
-			}
-			.nav-fm{
-				position: absolute;
-				left: 925px;
-			}
-			.nav-font{
-				font-size: 20px;
-				color: #858585;
-				margin-left: 20px;
-			}
-			.nav-menu{
-				height: 0;
-				width: 1114px;
-				margin: 0 auto;
-				display: flex;
-				justify-content: space-between;
-				display: none;
-				overflow: hidden;
-			}
-			.nav-menu-li{
-				width: 138px;
-				height: 180px;
-				float: left;
-				font-size: 12px;
-				text-align: center;
-				
-			}
-			.nav-menu-li img{
-				display: block;
-				width: 130px;
-				margin:5px auto 5px auto;
-				
-			}
-			.nav-menu-last{
-				width: 1240px;
-				margin: 0 auto;
-				display: none;
-				height: 0;
-				overflow: hidden;
-			}
-			.nav-menu-last img{
-				height: 300px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
 	</head>
 	<body>
 		<header>
@@ -113,61 +23,91 @@
 					<a href="" class="nav-a">政企定制</a>
 					<a href="" class="nav-a" style="margin-right: 0;">APP下载</a>
 					<input type="search" class="nav-search ">
-					<a href=""><span class="icon-fangdajing iconfont nav-font nav-fm"></span></a>
+					<a href="">
+						<span class="icon-fangdajing iconfont nav-font nav-fm"></span>
+					</a>
 					<a href=""><span class="icon-ren iconfont nav-font "></span></a>
-					<a href=""><span class="icon-gouwuche iconfont nav-font "></span></a>
+					<a href="shopcar.html" class="icon-gouwuche iconfont nav-font"></a>
+					<ul class="icon-ren-ul-1">
+						<li><a href="load.html">立即登录</a></li>
+						<li><a href="register.html">立即注册</a></li>
+						<li><a href="">我的订单</a></li>
+						<li><a href="">M码通道</a></li>
+					</ul>
+					<ul class="icon-ren-ul-2">
+						<li><a href="">个人中心</a></li>
+						<li><a href="">我的订单</a></li>
+						<li><a href="">M码通道</a></li>
+						<li><span id="exit">退出登录</span></li>
+					</ul>
+					<div class="icon-gouwuche-ul-1">
+						<img src="./img/header/xiongmao1.gif" alt="">
+						<p>登录后可显示<br>您账号中已加入的商品哦~</p>
+					</div>
+					<div class="icon-gouwuche-ul-2">
+						<img src="./img/header/xiongmao1.gif" alt="">
+						<p>去购物车~</p>
+					</div>
 				</div>
+				<ul class="nav-menu">
+					<li class="nav-menu-li"><a href="details.html?1"><img src="img/first/Cgbj0F6zwMuANEeWAAw6yQFAJXM097.png@240x240.jpg" alt=""></a><u>【热卖】魅族17</u><br><span>￥3699</span></li>
+					<li class="nav-menu-li"><a href="details.html?2"><img src="img/first/Cgbj0F6zwUqAdPsoAAtCAjTT7ek670.png@240x240.jpg" alt=""></a><u>【热卖】魅族17 Pro</u><br><span>￥4299</span></li>
+					<li class="nav-menu-li"><a href="details.html?3"><img src="img/first/Cgbj0V61DmKAarkmAAUGRp7cOD4317.png@240x240.jpg" alt=""></a><u>魅族 17 航母限定版</u><br><span>￥4299</span></li>
+					<li class="nav-menu-li"><a href="details.html?4"><img src="img/first/Cgbj0F61BXaARxdvAAqWtjjyY08964.png@240x240.jpg" alt=""></a><u>魅族 17 Pro 晓芳窑艺术...</u><br><span>￥9999</span></li>
+					<li class="nav-menu-li"><a href="details.html?5"><img src="img/first/Cgbj0F2upwyAKqQSAAlGpvLiEdc809.png@240x240.jpg" alt=""></a><u>魅族 16T</u><br><span>￥2299</span></li>
+					<li class="nav-menu-li"><a href="details.html?6"><img src="img/first/Cgbj0FzvRI6AWu1jAAxIbnS8M5Q295.png@240x240.jpg" alt=""></a><u>魅族 16Xs</u><br><span>￥1499</span></li>
+					<li class="nav-menu-li"><a href="details.html?7"><img src="img/first/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png@240x240.jpg" alt=""></a><u>魅族 16th</u><br><span>￥1898</span></li>
+					<li class="nav-menu-li"><a href="details.html?8"><img src="img/first/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.jpg" alt=""></a><u>魅族 X8</u><br><span>￥1298</span></li>
+				</ul>
+				<ul class="nav-menu">
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6z8VSAV6kEAAlCc-omYno614.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V3UocyAR_tJAApbDmCAyEo620.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0Vy_C3GAN_TKAAExaPfTwFc180.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0Fy9JYOACw2DAAMWf3vEhbA886.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V1l2ieAYKJGAAHMHuLWRMo374.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0Vy9Jq6AEzhMAApuih_4TPw329.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0Fui_-SAO6IgAARPVTFhby0701.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F1l7zeAFyLsAAZJk_cF8Tk126.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
+				</ul>
+				<ul class="nav-menu">
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F67s3yAYmI6AAIrMK1gFWU758.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F6z76aADIfNAAS8Gxwx2NE353.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F8alxiAIkvsAAn9MNJn1zA506.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7g-AMmMHAAkLeDbS6O4698.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F6z7ouAdDUlAAgE_65zxx0628.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F64-fCANzfvAAMAQSi_H7U780.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6o2n-ACbZsAAGnmeZVVRs678.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F7jIyOAaKEWAAdLI30DPuc780.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
+				</ul>
+				<ul class="nav-menu">
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7uiAJMl5AA7x6BjMe3s567.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7lmAL-vFAAm1Zf5GeYY782.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V61KNCAUduZAAqsAnm8x-0400.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V6z74aAO--aAAYHfnMzL1U910.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V2unKeALop5AAGkXjbP1nY517.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0Vy9J36ARuB2AAVQph9X9vs749.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0V1mIcGAfsr1AAyHfC16kLQ799.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
+					<li class="nav-menu-li"><img src="img/first/Cgbj0F2vvquAVavcAA456-P1T2s829.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
+					
+				</ul>
+				<div class="nav-menu-last"><img src="img/first/20dbe12b-c97c-4556-ac76-bce1d6457a6a.jpg" alt=""></div>
 			</div>
-			<ul class="nav-menu">
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F6zwMuANEeWAAw6yQFAJXM097.png@240x240.jpg" alt=""><u>【热卖】魅族17</u><br><span>￥3699</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F6zwUqAdPsoAAtCAjTT7ek670.png@240x240.jpg" alt=""><u>【热卖】魅族17 Pro</u><br><span>￥4299</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V61DmKAarkmAAUGRp7cOD4317.png@240x240.jpg" alt=""><u>魅族 17 航母限定版</u><br><span>￥4299</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F61BXaARxdvAAqWtjjyY08964.png@240x240.jpg" alt=""><u>魅族 17 Pro 晓芳窑艺术...</u><br><span>￥9999</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F2upwyAKqQSAAlGpvLiEdc809.png@240x240.jpg" alt=""><u>魅族 16T</u><br><span>￥2299</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0FzvRI6AWu1jAAxIbnS8M5Q295.png@240x240.jpg" alt=""><u>魅族 16Xs</u><br><span>￥1499</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png@240x240.jpg" alt=""><u>魅族 16th</u><br><span>￥1898</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.jpg" alt=""><u>魅族 X8</u><br><span>￥1298</span></li>
-			</ul>
-			<ul class="nav-menu">
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6z8VSAV6kEAAlCc-omYno614.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V3UocyAR_tJAApbDmCAyEo620.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0Vy_C3GAN_TKAAExaPfTwFc180.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0Fy9JYOACw2DAAMWf3vEhbA886.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V1l2ieAYKJGAAHMHuLWRMo374.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0Vy9Jq6AEzhMAApuih_4TPw329.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0Fui_-SAO6IgAARPVTFhby0701.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F1l7zeAFyLsAAZJk_cF8Tk126.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
-			</ul>
-			<ul class="nav-menu">
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F67s3yAYmI6AAIrMK1gFWU758.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F6z76aADIfNAAS8Gxwx2NE353.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F8alxiAIkvsAAn9MNJn1zA506.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7g-AMmMHAAkLeDbS6O4698.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F6z7ouAdDUlAAgE_65zxx0628.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F64-fCANzfvAAMAQSi_H7U780.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6o2n-ACbZsAAGnmeZVVRs678.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F7jIyOAaKEWAAdLI30DPuc780.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
-			</ul>
-			<ul class="nav-menu">
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7uiAJMl5AA7x6BjMe3s567.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6z7lmAL-vFAAm1Zf5GeYY782.png@240x240.jpg" alt=""><u>魅族 HD60 头戴式蓝牙...</u><br><span>￥499</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V61KNCAUduZAAqsAnm8x-0400.png@240x240.jpg" alt=""><u>魅族 HIFI 解码耳放</u><br><span>￥169</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V6z74aAO--aAAYHfnMzL1U910.png@240x240.jpg" alt=""><u>魅族 EP63NC 无限降噪...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V2unKeALop5AAGkXjbP1nY517.png@240x240.jpg" alt=""><u>魅族 EP3C 耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0Vy9J36ARuB2AAVQph9X9vs749.png@240x240.jpg" alt=""><u>魅族 POP2 真无线蓝牙...</u><br><span>￥399</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0V1mIcGAfsr1AAyHfC16kLQ799.png@240x240.jpg" alt=""><u>魅族 EP52 Lite 蓝牙耳机</u><br><span>￥129</span></li>
-				<li class="nav-menu-li"><img src="img/first/Cgbj0F2vvquAVavcAA456-P1T2s829.png@240x240.jpg" alt=""><u>MEIZU UR 高端定制...</u><br><span>￥200</span></li>
-			</ul>
-			<div class="nav-menu-last"><img src="img/first/20dbe12b-c97c-4556-ac76-bce1d6457a6a.jpg" alt=""></div>
+
+			
 		</header>
+
 	</body>
 </html>
 <script src="js/jqy.js"></script>
 <script>
 	$(function(){
 		$(".nav-a").mouseover(function(){
+			$(".icon-ren-ul-1").css("display","none");
+			$(".icon-ren-ul-2").css("display","none");
+			$(".icon-gouwuche-ul-1").css("display","none");
+			$(".icon-gouwuche-ul-2").css("display","none");
 			if($(this).index() == 0 || $(this).index() == 1 || $(this).index() == 2 || $(this).index() == 3){
-				$(".nav-menu-last").css({"height":0,"display":"none"})
+				$(".nav-menu-last").css({"height":0,"display":"none"});
 				$(".nav-menu").stop(true,false).css("display","none").eq($(this).index()).css({"height":180}).fadeIn()
 			}else if($(this).index() == 9){
 				$(".nav-menu").stop(true,false).css("display","none").css({"height":0});
@@ -181,8 +121,44 @@
 			$(this).css("opacity","1").siblings("li").css("opacity","0.5")
 		})
 		$("header").mouseleave(function(){
+			$(".icon-ren-ul-1").css("display","none");
+			$(".icon-ren-ul-2").css("display","none");
+			$(".icon-gouwuche-ul-1").css("display","none");
+			$(".icon-gouwuche-ul-2").css("display","none");
 			$(".nav-menu").fadeOut().css({"height":0});
 			$(".nav-menu-last").css({"height":0,"display":"none"})
+		})
+		$(".icon-ren").mouseover(function(){
+			$(".icon-gouwuche-ul-1").css("display","none");
+			$(".icon-gouwuche-ul-2").css("display","none");
+			$(".nav-menu").fadeOut().css({"height":0});
+			$(".nav-menu-last").css({"height":0,"display":"none"})
+			if(localStorage["phone"] == undefined && sessionStorage["phone"] == undefined){
+				$(".icon-ren-ul-1").css("display","block");
+			}
+			if(localStorage["phone"] != undefined || sessionStorage["phone"] != undefined){
+				$(".icon-ren-ul-2").css("display","block");
+			}
+			$("#exit").click(function(){
+				console.log(1);
+				localStorage.clear();
+				sessionStorage.clear();
+				alert("退出成功");
+				window.location.reload();
+			})
+		})
+		$(".icon-gouwuche").mouseover(function(){
+			$(".icon-ren-ul-1").css("display","none");
+			$(".icon-ren-ul-2").css("display","none");
+			$(".nav-menu").fadeOut().css({"height":0});
+			$(".nav-menu-last").css({"height":0,"display":"none"})
+			if(localStorage["phone"] == undefined && sessionStorage["phone"] == undefined){
+				$(".icon-gouwuche-ul-1").css("display","block");
+			}
+			if(localStorage["phone"] != undefined || sessionStorage["phone"] != undefined){
+				$(".icon-gouwuche-ul-2").css("display","block");
+			}
+	
 		})
 	})
 

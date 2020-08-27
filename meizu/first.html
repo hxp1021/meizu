@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" href="css/first.css"/>
 		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/one.css"/>
 		<style type="text/css">
 		body{
 			background-color:rgb(244,244,244);
@@ -22,9 +22,9 @@
 				z-index: 10;
 			}
 			.logo{
-				font-size: 30px;
+				font-size: 23px;
 				color: #008cff;
-				font-weight: bolder;
+				/* font-weight: bolder; */
 				line-height: 80px;
 				letter-spacing: 4px;
 				float: left;
@@ -57,12 +57,66 @@
 				font-size: 12px;
 				text-indent: 8px;
 			}
-			.nav-font{
-				margin-left: 20px;
+			.nav-fm {
+				position: absolute;
+				left: 1070px;
 			}
 			.nav-font{
-				font-size: 30px;
+				font-size: 20px;
 				color: #858585;
+				margin-left: 20px;
+			}
+			.icon-ren-ul-1,.icon-ren-ul-2{
+				position: absolute;
+				top: 60px;
+				left: 1100px;
+				width: 100px;
+				height: 150px;
+				display: flex;
+				flex-direction: column;
+				background-color: pink;
+				justify-content: flex-start;
+				display: none;
+				background-color: #fff;
+				border: 1px #ECECEC solid;
+			}
+			.icon-gouwuche-ul-1,.icon-gouwuche-ul-2{
+				position: absolute;
+				top: 60px;
+				left: 900px;
+				width: 320px;
+				height: 120px;
+				display: flex;
+				flex-direction: column;
+				background-color: hotpink;
+				justify-content: flex-start;
+				display: none;
+				background-color: #fff;
+				border: 1px #ECECEC solid;
+			}
+			.icon-ren-ul-1 li,.icon-gouwuche-ul-1 li,.icon-ren-ul-2 li,.icon-gouwuche-ul-2 li{
+				height: 30px;
+				width: 100px;
+				text-align: center;
+				line-height: 60px;
+			}
+			.icon-ren-ul-1 li a,.icon-gouwuche-ul-1 li a{
+				position: relative;
+			}
+			.icon-gouwuche-ul-1 img,.icon-gouwuche-ul-2 img{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 30px;
+				left: 50px;
+			}
+			.icon-gouwuche-ul-1 p,.icon-gouwuche-ul-2 p{
+				position: absolute;
+				top: 30px;
+				left: 110px;
+				line-height: 24px;
+				font-size: 12px;
+				color: #c5c5c5;
 			}
 			/* 二级导航 */
 			.nav-menu{
@@ -85,6 +139,17 @@
 				float: left;
 				text-align: center;
 				font-size: 12px;
+			}
+			.nav-search{
+				width: 170px;
+				height: 30px;
+				border-radius: 15px;
+				outline: none;
+				font-size: 12px;
+				text-indent: 8px;
+				position: relative;
+				top: -5px;
+				margin-left: 40px;
 			}
 			.nav-menu-li a{
 				font-size: 12px;
@@ -368,10 +433,9 @@
 				height: 60px;
 				width: 100%;
 			}
-			/* .nav-fontcart{
-				position: relative;
-				left: 250px;
-			} */
+			#exit{
+				cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
@@ -379,7 +443,7 @@
 			<!-- 头部导航 -->
 			<header>
 				<div  class="safe headers">
-					<h1 class="logo f">MEIZU</h1>
+					<a class="f iconfont icon-meizu logo"></a>
 					<div class="nav">
 						<a href="" class="nav-a">手机</a>
 						<a href="" class="nav-a">声学</a>
@@ -392,21 +456,41 @@
 						<a href="" class="nav-a">政企定制</a>
 						<a href="" class="nav-a" style="margin-right: 0;">APP下载</a>
 						<input type="search" class="nav-search">
-						<a href="" class="nav-fontcart"><span class="icon-iconfontcart iconfont nav-font r"></span></a>
-						<a href="" class="nav-fontwo"><span class="icon-iconfontwo iconfont nav-font r"></span></a>
-						
+						<a href=""><span class="icon-fangdajing iconfont nav-font nav-fm"></span></a>
+						<a href=""><span class="icon-ren iconfont nav-font "></span></a>
+						<a href="shopcar.html"><span class="icon-gouwuche iconfont nav-font "></span></a>
+						<ul class="icon-ren-ul-1">
+							<li><a href="load.html">立即登录</a></li>
+							<li><a href="register.html">立即注册</a></li>
+							<li><a href="">我的订单</a></li>
+							<li><a href="">M码通道</a></li>
+						</ul>
+						<ul class="icon-ren-ul-2">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">我的订单</a></li>
+							<li><a href="">M码通道</a></li>
+							<li><span id="exit">退出登录</span></li>
+						</ul>
+						<div class="icon-gouwuche-ul-1">
+							<img src="./img/header/xiongmao1.gif" alt="">
+							<p>登录后可显示<br>您账号中已加入的商品哦~</p>
+						</div>
+						<div class="icon-gouwuche-ul-2">
+							<img src="./img/header/xiongmao1.gif" alt="">
+							<p>去购物车~</p>
+						</div>
 					</div>
 				</div>
 				<!-- 二级导航 -->
 				<ul class="nav-menu">
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0F6zwMuANEeWAAw6yQFAJXM097.png@240x240.jpg" alt=""><u>【热卖】魅族17</u><br><span>￥3699</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0F6zwUqAdPsoAAtCAjTT7ek670.png@240x240.jpg" alt=""><u>【热卖】魅族17 Pro</u><br><span>￥4299</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0V61DmKAarkmAAUGRp7cOD4317.png@240x240.jpg" alt=""><u>魅族 17 航母限定版</u><br><span>￥4299</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0F61BXaARxdvAAqWtjjyY08964.png@240x240.jpg" alt=""><u>魅族 17 Pro 晓芳窑艺术...</u><br><span>￥9999</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0F2upwyAKqQSAAlGpvLiEdc809.png@240x240.jpg" alt=""><u>魅族 16T</u><br><span>￥2299</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0FzvRI6AWu1jAAxIbnS8M5Q295.png@240x240.jpg" alt=""><u>魅族 16Xs</u><br><span>￥1499</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png@240x240.jpg" alt=""><u>魅族 16th</u><br><span>￥1898</span></a></li>
-					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.jpg" alt=""><u>魅族 X8</u><br><span>￥1298</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?1"><img src="img/first/Cgbj0F6zwMuANEeWAAw6yQFAJXM097.png@240x240.jpg" alt=""><u>【热卖】魅族17</u><br><span>￥3699</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?2"><img src="img/first/Cgbj0F6zwUqAdPsoAAtCAjTT7ek670.png@240x240.jpg" alt=""><u>【热卖】魅族17 Pro</u><br><span>￥4299</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?3"><img src="img/first/Cgbj0V61DmKAarkmAAUGRp7cOD4317.png@240x240.jpg" alt=""><u>魅族 17 航母限定版</u><br><span>￥4299</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?4"><img src="img/first/Cgbj0F61BXaARxdvAAqWtjjyY08964.png@240x240.jpg" alt=""><u>魅族 17 Pro 晓芳窑艺术...</u><br><span>￥9999</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?5"><img src="img/first/Cgbj0F2upwyAKqQSAAlGpvLiEdc809.png@240x240.jpg" alt=""><u>魅族 16T</u><br><span>￥2299</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?6"><img src="img/first/Cgbj0FzvRI6AWu1jAAxIbnS8M5Q295.png@240x240.jpg" alt=""><u>魅族 16Xs</u><br><span>￥1499</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?7"><img src="img/first/Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png@240x240.jpg" alt=""><u>魅族 16th</u><br><span>￥1898</span></a></li>
+					<li class="nav-menu-li"><a href="details.html?8"><img src="img/first/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.jpg" alt=""><u>魅族 X8</u><br><span>￥1298</span></a></li>
 				</ul>
 				<ul class="nav-menu">
 					<li class="nav-menu-li"><a href=""><img src="img/first/Cgbj0V6z8VSAV6kEAAlCc-omYno614.png@240x240.jpg" alt=""><u>魅族 HD60 降噪耳机</u><br><span>￥1099</span></a></li>
@@ -444,15 +528,15 @@
 			<div class="banner-1">
 				<!-- 轮播图中的图片 -->
 				<ul class="banner-1-ul">
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
-					<li class="banner-1-li"><a href="" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?1" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?2" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?3" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?4" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?5" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?6" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?7" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?8" class="banner-1-a"></a></li>
+					<li class="banner-1-li"><a href="details.html?1" class="banner-1-a"></a></li>
 				</ul>
 				<!-- 轮播图中的小白球 -->
 				<ol class="banner-1-ol">
@@ -471,28 +555,28 @@
 		<div class="white">
 		<ul class="safe show">
 			<li class="show-li">
-				<a href="">
+				<a href="details.html?3">
 					<img class="show-img" src="img/first/63c21512-5528-4e59-b9f6-3b009b9d70e0.png" alt="">
 				</a>
 				<h1 class="show-h1">魅族夏日福利</h1>
 				<span class="show-span">全场限时包邮</span>
 			</li>
 			<li class="show-li">
-				<a href="">
+				<a href="details.html?1">
 					<img class="show-img" src="img/first/fbfbb94a-cf44-4aad-a3b2-9b4709380b66.jpg" alt="">
 				</a>
 				<h1 class="show-h1">魅族 17</h1>
 				<span class="show-span">限时领券立省100</span>
 			</li>
 			<li class="show-li">
-				<a href="">
+				<a href="details.html?2">
 					<img class="show-img" src="img/first/da0fc413-1cd7-4efb-80f6-19339b004332.png" alt="">
 				</a>
 				<h1 class="show-h1">魅族 17 Pro</h1>
 				<span class="show-span">限时领券至高领200</span>
 			</li>
 			<li class="show-li">
-				<a href="">
+				<a href="details.html?4">
 					<img class="show-img" src="img/first/13de22b5-2301-480f-99f9-778e4ff8644c.jpg" alt="">
 				</a>
 				<h1 class="show-h1">mCycle</h1>
@@ -503,10 +587,10 @@
 		</div>
 		<!-- 手机 -->
 		<div class="tit">手机</div>
-		<div class="big-banner"><a href=""><img src="img/first/385edc78-ca8b-420d-a565-72a45c40e207.jpg" alt=""></a></div>
+		<div class="big-banner"><a href="details.html?1"><img src="img/first/385edc78-ca8b-420d-a565-72a45c40e207.jpg" alt=""></a></div>
 		<ul class="phone safe">
 			<li class="phone-1">
-				<a href="">
+				<a href="details.html?1">
 					<img src="img/first/zengpin.png" alt="" class="phone-1-span">
 					<h4>魅族 17</h4>
 					<h5>限时领券立省100+赠全新壳膜套装</h5>
@@ -515,7 +599,7 @@
 				</a>
 			</li>
 			<li class="phone-1">
-				<a href="">
+				<a href="details.html?2">
 					<img src="img/first/zengpin.png" alt="" class="phone-1-span">
 					<h4>魅族 17 Pro</h4><h5>限时领券至高立省200+赠全新壳膜套装</h5>
 					<h6><i>￥</i>4299</h6>
@@ -523,7 +607,7 @@
 				</a>
 			</li>
 			<li class="phone-2">
-				<a href="">
+				<a href="details.html?3">
 					<img src="img/first/Cgbj0V61DmKAarkmAAUGRp7cOD4317.png@240x240.jpg" alt="">
 					<h4>魅族 17 航母限定版</h4>
 					<h5>以梦为舰 热爱起航</h5>
@@ -531,7 +615,7 @@
 				</a>
 			</li>
 			<li class="phone-2">
-				<a href="">
+				<a href="details.html?5">
 					<img src="img/first/Cgbj0V2upxqANyVFAAjApUYA58w668.png" alt="">
 					<h4>魅族 16T</h4>
 					<h5>6.5英寸极边全面屏|晓龙855旗舰处理器</h5>
@@ -539,7 +623,7 @@
 				</a>
 			</li>
 			<li class="phone-2">
-				<a href="">
+				<a href="details.html?7">
 					<img src="img/first/Cgbj0F1jhu-AaV4AAAlk4z4lkt0463.png" alt="">
 					<h4>魅族 16s Pro</h4>
 					<h5>高通骁龙 855 Plus | 索尼4800W AI 三摄</h5>
@@ -547,7 +631,7 @@
 				</a>
 			</li>
 			<li class="phone-2">
-				<a href="">
+				<a href="details.html?6">
 					<img src="img/first/Cgbj0VzvRJ-AWr44AAiGUPbS22w583.png" alt="">
 					<h4>魅族 16Xs</h4>
 					<h5>极边全面屏|4800AI三摄|疾速屏下指纹</h5>
@@ -1035,5 +1119,5 @@
 <script src="js/jqy.js"></script>
 <script src="js/first.js"></script>
 <script type="text/javascript">
-	// $("footer").load("footer.html");
+	$("footer").load("footer.html");
 </script>

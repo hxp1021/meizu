@@ -1,0 +1,166 @@
+			.headers {
+				height: 80px;
+				position: relative;
+			}
+
+			header {
+				border-bottom: 1px solid #efefef;
+			}
+
+			.logo {
+				font-size: 23px;
+				color: #008cff;
+				/* font-weight: bolder; */
+				line-height: 80px;
+				letter-spacing: 4px;
+				float: left;
+				margin-right: 145px;
+			}
+
+			.nav {
+				font-size: 14px;
+				line-height: 80px;
+				margin-left: 145px;
+				position: relative;
+			}
+
+			.nav-a {
+				margin-right: 30px;
+				color: #333;
+				height: 80px;
+				display: block;
+				float: left;
+			}
+
+			.nav-a:hover {
+				color: #008cff;
+			}
+
+			.nav-margin {
+				margin-left: 17px;
+			}
+
+			.nav-search {
+				width: 170px;
+				height: 30px;
+				border-radius: 15px;
+				outline: none;
+				font-size: 12px;
+				text-indent: 8px;
+				position: relative;
+				top: -5px;
+				margin-left: 40px;
+			}
+
+			.nav-fm {
+				position: absolute;
+				left: 925px;
+			}
+
+			.nav-font {
+				font-size: 20px;
+				color: #858585;
+				margin-left: 20px;
+			}
+
+			.nav-menu {
+				height: 0;
+				width: 1114px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				display: none;
+				overflow: hidden;
+				position: absolute;
+				top: 80px;
+				left: 0;
+				background-color: #fff;
+				z-index: 100;
+			}
+
+			.nav-menu-li {
+				width: 138px;
+				height: 180px;
+				float: left;
+				font-size: 12px;
+				text-align: center;
+
+			}
+
+			.nav-menu-li img {
+				display: block;
+				width: 130px;
+				margin: 5px auto 5px auto;
+
+			}
+
+			.nav-menu-last {
+				width: 1240px;
+				margin: 0 auto;
+				display: none;
+				height: 0;
+				overflow: hidden;
+				position: absolute;
+				top: 80px;
+				z-index: 100;
+			}
+
+			.nav-menu-last img {
+				height: 300px;
+			}
+			.icon-ren-ul-1,.icon-ren-ul-2{
+				position: absolute;
+				top: 60px;
+				left: 965px;
+				width: 100px;
+				height: 150px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				display: none;
+				background-color: #fff;
+				border: 1px #ECECEC solid;
+				z-index: 100;
+			}
+			.icon-gouwuche-ul-1,.icon-gouwuche-ul-2{
+				position: absolute;
+				top: 60px;
+				left: 750px;
+				width: 320px;
+				height: 120px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				display: none;
+				background-color: #fff;
+				border: 1px #ECECEC solid;
+				z-index: 100;
+			}
+			.icon-ren-ul-1 li,.icon-gouwuche-ul-1 li,.icon-ren-ul-2 li,.icon-gouwuche-ul-2 li{
+				height: 30px;
+				width: 100px;
+				text-align: center;
+				line-height: 60px;
+			}
+			.icon-ren-ul-1 li a,.icon-gouwuche-ul-1 li a{
+				position: relative;
+			}
+			.icon-gouwuche-ul-1 img,.icon-gouwuche-ul-2 img{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 30px;
+				left: 50px;
+			}
+			.icon-gouwuche-ul-1 p,.icon-gouwuche-ul-2 p{
+				position: absolute;
+				top: 30px;
+				left: 110px;
+				line-height: 24px;
+				font-size: 12px;
+				color: #c5c5c5;
+			}
+			#exit{
+				cursor: pointer;
+			}
+			

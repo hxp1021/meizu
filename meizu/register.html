@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	</head>
+	<body>
+		<header>
+			<h1 class="safe"><a href=""><span class="iconfont icon-meizu logo"></span></a></h1>
+		</header>
+		<div class="section">
+			<div class="section-img">
+				<div class="tables">
+					<h1  class="tit"><a href="">注册 Flyme 账号</a></h1>
+					<div class="tbody">
+						<div class="alert">
+							<span class="alert-warn">！</span>
+							<u>请点击按钮进行验证</u>
+							<i>X</i>
+						</div>
+						<select name="">
+							<option value="">+86</option>
+							<option value="">+886</option>
+							<option value="">+852</option>
+							<option value="">+55</option>
+							<option value="">+91</option>
+							<option value="">+62</option>
+							<option value="">+60</option>
+						</select>
+						<input type="text" class="phone" placeholder="手机号码"/>
+						<button class="test">
+							<span class="border"></span>
+							<span class="blue"></span>
+							<u class="content">点击按钮进行验证</u>
+							<span class="button"></span>
+						</button>
+						<div class="read">
+							<span class="read-check-box">
+								<input type="checkbox" class="read-checkbox">
+							</span>
+							注册账号即表示您同意并愿意遵守
+							<a href="">Flyme账号服务协议</a> 、
+							<a href="">法律声明</a> 和 <a href="">隐私政策</a>
+						</div>
+						<input type="button" value="立即注册" id="register"/>
+						<a href="load.html" class="tbody-load">登录</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-1">
+				<a href="" class="footer-a-1">关于魅族</a>
+				<span>|</span>
+				<a href="" class="footer-a-1">工作机会</a>
+				<span>|</span>
+				<a href="" class="footer-a-1">联系我们</a>
+				<span>|</span>
+				<a href="" class="footer-a-1">法律声明</a>
+				<span>|</span>
+				<a href="" class="footer-a-1">常见问题</a>
+				<span>|</span>
+				<a href="" class="footer-a-1">简体中文</a>
+				<u>客服热线 400-788-3333</u>
+				<a href="" class="online">在线客服</a>
+			</div>
+			<div class="bottom-1">
+				<u>©2019 Meizu Telecom Equipment Co., Ltd. All rights reserved. </u>
+				<a href="">粤ICP备13003602号</a>
+				<a href="">合字B2-20170010</a>
+				<a href="">营业执照</a>
+				<a href="">法律声明</a>
+				<a href="">粤公网安备 44049102496009 号</a>
+			</div>
+		</footer>
+
+	</body>
+</html>
+<script src="js/jqy.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//点击按钮验证
+	$(".test").click(function(){
+		$(this).css({
+			"background-color":"#eefff5",
+			"border":"1px solid #26c267"
+		})
+		$(".border").css({
+			"background":"url(img/register/border-1.gif) center",
+			"border-radius":0,
+			"border": "none"
+		});
+		$(".blue").css("display","none");
+		$(".button").css("background","url(img/register/button-1.jpg) center");
+		$(".content").html("验证成功").css({"color":"#18a452"});
+	})
+	//警告栏关闭按钮
+	$(".alert i").click(function(){
+		$(".alert").css("display","none")
+	})
+	
+	//手机号正则
+	let phoneNum = null;
+	let flagPhone = false;
+	$(".phone").blur(function(){
+		let phoneReg = /^1[3456789]\d{9}$/;
+		phoneNum = $(".phone").val();
+		console.log(phoneNum);
+		if(phoneReg.test(phoneNum)){
+			flagPhone = true;
+		}
+	})
+	//按钮验证
+	let flagButton = false;
+	$(".test").click(function(){
+		flagButton = true;
+	})
+	//阅读条款验证
+	let flagRead = false;
+	$(".read-checkbox").click(function(){
+		if(flagRead){
+			flagRead = false;
+		}else{
+			flagRead = true;
+		}
+	})
+	//注册按钮校验
+	$("#register").click(function(){
+		if(flagButton == false){
+			$(".alert").css("display","block");
+			return;
+		}
+		if($(".phone").val()==""){
+			$(".alert u").html("请输入完整的注册信息");
+			$(".alert").css("display","block");
+			return;
+		}
+		if(flagPhone == false){
+			$(".alert u").html("请输入合法的手机号码");
+			$(".alert").css("display","block");
+			return;
+		}
+		if(flagRead == false){
+			$(".alert u").html("请先同意用户条款");
+			$(".alert").css("display","block");
+			return;
+		}
+
+		let code = "";
+		$.ajax({
+				url:"register.php",
+				type:"POST",
+				data:"userphone="+phoneNum,
+				success:function(resText){
+					if(resText==1){
+						let oTbody = document.getElementsByClassName("tbody");
+						oTbody[0].innerHTML = `
+							<h1>+86 ${phoneNum} </h1>
+							<h2>该手机号码已注册</h2>
+							<button class = "fast-login">立即登录<button>
+							<a href="" class="tbody-load">注册</a>
+						`;
+						$(".fast-login").click(function(){
+							window.location.href="load.html"
+						})
+					}else if(resText==0){
+						let oTbody = document.getElementsByClassName("tbody");
+						let str = "0123456789abcdefghijklmnopqrstovwxyz";
+						
+						for(let i=0;i<4;i++){
+							code += str[Math.floor( Math.random()*36)]
+						}
+						oTbody[0].innerHTML = `
+							<h2>欢迎 +86 ${phoneNum} ,请输入后面的验证码 ${code}</h2>
+							<input type="text" class="code"/>
+							<button class = "tbody-next">下一步<button>
+							<a href="load.html" class="tbody-load">登录</a>
+						`;
+						$(".tbody-next").click(function(){
+							if($(".code").val() == code){
+								let oTbody = document.getElementsByClassName("tbody");
+								oTbody[0].innerHTML = `
+									<h2>密码长度至少为8位，可包含数字字母以及下划线</h2>
+									<input type="Password" id = "pwd"/>
+									<button class = "tbody-submit">提交<button>
+									<a href="" class="tbody-load">登录</a>
+								`;
+								$(".tbody-submit").click(function(){
+									let pwdReg = /^\d{8}$/;
+									let oPwd = $("#pwd").val();
+									if(pwdReg.test(oPwd)){
+										$.ajax({
+												url:"registers.php",
+												type:"POST",
+												data:"userphone=" + phoneNum + "&userpwd=" + oPwd,
+												success:function(resText){
+													if(resText==1){
+														alert("请勿重复提交")
+													}else{
+														alert("注册成功");
+														window.location.href="load.html";
+													}
+												}
+										});
+									}else{
+										alert("请输入合法的密码");
+									}
+								})
+							}else{
+								alert("请输入正确的验证码");
+								console.log($(".code").val());
+								console.log(code);
+							}
+						})
+					}
+				}
+			});
+	})
+</script>
